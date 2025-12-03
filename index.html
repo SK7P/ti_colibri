@@ -4,32 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ti'colibri - Accompagnement VAE Petite Enfance par Fanny. Un accompagnement humain, structuré et bienveillant pour obtenir votre diplôme.">
     <title>Ti'colibri - Accompagnement VAE Petite Enfance</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#8B7AB8',
-                        secondary: '#4DB8C4',
-                        accent: '#F5A3C7',
-                        beige: '#F5F0E8',
-                        dark: '#2D3748'
+                        primary: '#8B5CF6',
+                        secondary: '#06B6D4',
+                        accent: '#EC4899',
+                        cream: '#FEFDFB',
+                        dark: '#334155'
+                    },
+                    fontFamily: {
+                        heading: ['Quicksand', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+    <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Quicksand', sans-serif;
         }
 
         .gradient-primary {
-            background: linear-gradient(135deg, #8B7AB8 0%, #4DB8C4 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
         }
 
         .hover-lift {
@@ -38,30 +59,65 @@
 
         .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation pour le menu mobile */
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out;
         }
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-white smooth-scroll">
+
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="https://via.placeholder.com/120x80/8B7AB8/ffffff?text=Ti%27colibri" alt="Ti'colibri Logo"
-                        class="h-16">
+                    <img src="logo.png" alt="Ti'colibri Logo" class="h-16 w-auto">
                 </div>
+
+                <!-- Navigation Desktop -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#accueil" class="text-dark hover:text-primary transition">Accueil</a>
-                    <a href="#accompagnements" class="text-dark hover:text-primary transition">Accompagnements</a>
-                    <a href="#temoignages" class="text-dark hover:text-primary transition">Témoignages</a>
-                    <a href="#apropos" class="text-dark hover:text-primary transition">À propos</a>
-                    <a href="#contact" class="text-dark hover:text-primary transition">Contact</a>
+                    <a href="#accueil" class="text-dark hover:text-primary transition font-medium">Accueil</a>
+                    <a href="#accompagnements" class="text-dark hover:text-primary transition font-medium">Accompagnements</a>
+                    <a href="#ressources" class="text-dark hover:text-primary transition font-medium">Ressources</a>
+                    <a href="#contact" class="text-dark hover:text-primary transition font-medium">Contact</a>
                 </div>
-                <button class="bg-primary text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">
-                    Prendre RDV
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition font-semibold shadow-lg hover:shadow-xl">
+                        Prendre contact
+                    </a>
+                </div>
+
+                <!-- Burger Menu Mobile -->
+                <button id="mobile-menu-button" class="md:hidden text-dark focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="mobile-menu md:hidden overflow-hidden max-h-0">
+                <div class="py-4 space-y-3">
+                    <a href="#accueil" class="block text-dark hover:text-primary transition font-medium py-2">Accueil</a>
+                    <a href="#accompagnements" class="block text-dark hover:text-primary transition font-medium py-2">Accompagnements</a>
+                    <a href="#ressources" class="block text-dark hover:text-primary transition font-medium py-2">Ressources</a>
+                    <a href="#contact" class="block text-dark hover:text-primary transition font-medium py-2">Contact</a>
+                    <a href="#contact" class="block bg-primary text-white px-6 py-3 rounded-full text-center font-semibold">
+                        Prendre contact
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -70,116 +126,666 @@
     <section id="accueil" class="pt-32 pb-20 gradient-primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <h1 class="text-5xl font-bold mb-6">Réussissez votre VAE petite enfance sereinement</h1>
-                    <p class="text-xl mb-8 opacity-90">Un accompagnement humain, structuré et bienveillant pour obtenir
-                        votre diplôme.</p>
-                    <button
-                        class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-xl transition text-lg">
-                        Démarrer mon projet VAE
-                    </button>
+                <div class="text-white space-y-6">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Réussissez votre VAE petite enfance sereinement
+                    </h1>
+                    <p class="text-lg md:text-xl opacity-95 leading-relaxed">
+                        Un accompagnement humain, structuré et bienveillant pour obtenir votre diplôme.
+                    </p>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition text-lg">
+                            Démarrer mon projet VAE
+                        </a>
+                    </div>
                 </div>
                 <div class="bg-white rounded-3xl p-8 shadow-2xl">
-                    <img src="https://via.placeholder.com/500x400/F5A3C7/ffffff?text=Illustration"
-                        alt="VAE Illustration" class="rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop"
+                         alt="Accompagnement VAE"
+                         class="rounded-2xl w-full h-auto object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problématiques -->
-    <section class="py-20 bg-beige">
+    <!-- Les difficultés VAE -->
+    <section class="py-20 bg-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-4 text-dark">Les difficultés que rencontrent beaucoup de
-                candidates à la VAE</h2>
-            <div class="grid md:grid-cols-4 gap-8 mt-16">
-                <div class="bg-white p-8 rounded-2xl hover-lift text-center">
-                    <div
-                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">
+                Les difficultés que rencontrent beaucoup de candidates à la VAE
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                <!-- Difficulté 1 -->
+                <div class="bg-white p-8 rounded-2xl hover-lift text-center shadow-md">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <span class="text-3xl text-primary font-bold">1</span>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">Je ne comprends pas les démarches.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl hover-lift text-center">
-                    <div
-                        class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl text-secondary font-bold">2</span>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed">Je n'arrive pas à relier mes compétences au référentiel.
+                    <p class="text-gray-700 leading-relaxed font-medium">
+                        Je ne comprends pas les démarches.
                     </p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl hover-lift text-center">
-                    <div
-                        class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                <!-- Difficulté 2 -->
+                <div class="bg-white p-8 rounded-2xl hover-lift text-center shadow-md">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-secondary font-bold">2</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed font-medium">
+                        Je n'arrive pas à relier mes compétences au référentiel.
+                    </p>
+                </div>
+
+                <!-- Difficulté 3 -->
+                <div class="bg-white p-8 rounded-2xl hover-lift text-center shadow-md">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <span class="text-3xl text-accent font-bold">3</span>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">Je manque de temps, d'organisation.</p>
+                    <p class="text-gray-700 leading-relaxed font-medium">
+                        Je manque de temps, d'organisation.
+                    </p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl hover-lift text-center">
-                    <div
-                        class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+
+                <!-- Difficulté 4 -->
+                <div class="bg-white p-8 rounded-2xl hover-lift text-center shadow-md">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
                         <span class="text-3xl text-primary font-bold">4</span>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">J'ai peur de rater ma soutenance.</p>
+                    <p class="text-gray-700 leading-relaxed font-medium">
+                        J'ai peur de rater ma soutenance.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution -->
+    <!-- Accompagnement pas à pas -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-dark">Ti'colibri vous accompagne pas à pas vers la
-                validation de votre VAE</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">
+                Ti'colibri / Fanny vous accompagne pas à pas vers la validation de votre VAE
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Étape 1 -->
+                <div class="text-center space-y-4">
+                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto shadow-lg">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark">Diagnostic de votre parcours</h3>
-                    <p class="text-gray-600">Analyse approfondie de votre expérience et de vos compétences</p>
+                    <h3 class="text-xl font-bold text-dark">Diagnostic de votre parcours</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Analyse approfondie de votre expérience professionnelle et identification de vos compétences clés.
+                    </p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+
+                <!-- Étape 2 -->
+                <div class="text-center space-y-4">
+                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto shadow-lg">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark">Rédaction pas à pas</h3>
-                    <p class="text-gray-600">Accompagnement structuré pour construire un dossier solide</p>
+                    <h3 class="text-xl font-bold text-dark">Rédaction pas à pas</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Accompagnement structuré pour construire un dossier solide et cohérent avec le référentiel.
+                    </p>
                 </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+
+                <!-- Étape 3 -->
+                <div class="text-center space-y-4">
+                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto shadow-lg">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark">Préparation à l'oral</h3>
-                    <p class="text-gray-600">Entraînement et coaching pour réussir votre soutenance</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark">Suivi personnalisé</h3>
-                    <p class="text-gray-600">Disponibilité et écoute tout au long de votre projet</p>
+                    <h3 class="text-xl font-bold text-dark">Préparation à l'oral</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Entraînement et coaching personnalisé pour réussir votre soutenance avec confiance.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-</body>
+    <!-- Formules d'accompagnement -->
+    <section id="accompagnements" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">
+                Des accompagnements individualisés et adaptés à chaque besoin
+            </h2>
 
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Formule Essentiel -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Essentiel</h3>
+                        <div class="mb-6">
+                            <p class="text-gray-600 text-sm mb-2">À partir de</p>
+                            <p class="text-4xl font-bold text-primary">Sur devis</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Accompagnement de base</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Diagnostic initial</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Support par email</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-primary text-white py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
+                        En savoir plus
+                    </a>
+                </div>
+
+                <!-- Formule Sérénité (Populaire) -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover-lift border-2 border-primary relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-accent text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                            Populaire
+                        </span>
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Sérénité</h3>
+                        <div class="mb-6">
+                            <p class="text-gray-600 text-sm mb-2">À partir de</p>
+                            <p class="text-4xl font-bold text-primary">Sur devis</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Tout le pack Essentiel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Suivi régulier personnalisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Relecture du dossier</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Appels visio mensuels</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center gradient-primary text-white py-3 rounded-full font-semibold hover:shadow-xl transition">
+                        En savoir plus
+                    </a>
+                </div>
+
+                <!-- Formule Premium -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Premium</h3>
+                        <div class="mb-6">
+                            <p class="text-gray-600 text-sm mb-2">À partir de</p>
+                            <p class="text-4xl font-bold text-primary">Sur devis</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Tout le pack Sérénité</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Accompagnement VIP</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Disponibilité prioritaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-gray-700">Coaching oral intensif</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-primary text-white py-3 rounded-full font-semibold hover:bg-opacity-90 transition">
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-600 mt-8 text-sm">
+                * Plusieurs modes de paiements disponibles (financements, CPF etc...)
+            </p>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section id="temoignages" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-dark">
+                Elles ont réussi leur VAE avec Ti'colibri
+            </h2>
+
+            <div class="relative">
+                <!-- Carousel Container -->
+                <div id="testimonials-container" class="overflow-hidden">
+                    <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
+
+                        <!-- Témoignage 1 -->
+                        <div class="flex-shrink-0 w-full px-4">
+                            <div class="bg-cream rounded-3xl p-8 md:p-12 shadow-lg max-w-3xl mx-auto">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                         alt="Sophie"
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-dark text-lg">Sophie M.</h4>
+                                        <p class="text-gray-600">CAP AEPE obtenu</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 leading-relaxed text-lg italic">
+                                    "Grâce à Fanny, j'ai réussi à structurer mon parcours et à valoriser mes compétences.
+                                    Son accompagnement bienveillant m'a donné confiance pour l'oral. Je recommande vivement !"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Témoignage 2 -->
+                        <div class="flex-shrink-0 w-full px-4">
+                            <div class="bg-cream rounded-3xl p-8 md:p-12 shadow-lg max-w-3xl mx-auto">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                                         alt="Marie"
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-dark text-lg">Marie L.</h4>
+                                        <p class="text-gray-600">Auxiliaire de puériculture</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 leading-relaxed text-lg italic">
+                                    "Un accompagnement sur-mesure qui m'a permis d'aller au bout de mon projet.
+                                    Fanny est à l'écoute et sait s'adapter à nos besoins. Merci pour tout !"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Témoignage 3 -->
+                        <div class="flex-shrink-0 w-full px-4">
+                            <div class="bg-cream rounded-3xl p-8 md:p-12 shadow-lg max-w-3xl mx-auto">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+                                         alt="Laura"
+                                         class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-dark text-lg">Laura B.</h4>
+                                        <p class="text-gray-600">EJE diplômée</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 leading-relaxed text-lg italic">
+                                    "J'avais peur de me lancer seule dans cette VAE. Avec Ti'colibri, j'ai été accompagnée
+                                    du début à la fin. Le résultat : diplôme obtenu avec mention !"
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition z-10 hidden md:block">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition z-10 hidden md:block">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Dots Navigation -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-primary transition" data-index="0"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="1"></button>
+                    <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qui se cache derrière Ti'colibri -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-dark">
+                Qui se cache derrière Ti'colibri ?
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Photo Fanny -->
+                <div class="order-2 md:order-1">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop"
+                         alt="Fanny - Fondatrice Ti'colibri"
+                         class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                </div>
+
+                <!-- Présentation -->
+                <div class="order-1 md:order-2 space-y-6">
+                    <div class="space-y-4">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            <strong class="text-primary">Formatrice et jury VAE</strong> avec 15 ans d'expérience dans
+                            la petite enfance, je vous aide à atteindre votre diplôme avec bienveillance.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Passionnée par l'accompagnement des professionnels de la petite enfance, j'ai créé Ti'colibri
+                            pour offrir un soutien personnalisé et humain à chaque candidate.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Mon approche se veut à la fois structurée et bienveillante, car je crois que la réussite passe
+                            par la confiance en soi et une méthodologie solide.
+                        </p>
+                    </div>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-block bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg">
+                            Prendre contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">
+                Contactez-moi pour parler de votre projet
+            </h2>
+            <p class="text-center text-gray-600 mb-12">
+                Remplissez ce formulaire et je vous répondrai dans les 48h pour échanger sur votre projet VAE.
+            </p>
+
+            <!-- Netlify Form -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+                <!-- Honeypot for spam protection -->
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
+                <!-- Nom/Prénom -->
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-2">Nom Prénom *</label>
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+                    <textarea id="message"
+                              name="message"
+                              rows="6"
+                              required
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit"
+                            class="w-full gradient-primary text-white py-4 rounded-full font-semibold hover:shadow-xl transition text-lg">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
+
+            <!-- Infos Contact -->
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 text-sm">
+                    Liens vers les réseaux / groupes et téléphone, email
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet - Guide gratuit -->
+    <section id="ressources" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-dark">
+                Téléchargez le guide gratuit pour bien démarrer votre dossier VAE
+            </h2>
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl mt-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Image du livret -->
+                    <div class="order-2 md:order-1">
+                        <div class="bg-gradient-accent rounded-2xl p-8 text-white text-center aspect-square flex items-center justify-center">
+                            <div>
+                                <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z"></path>
+                                    <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"></path>
+                                </svg>
+                                <p class="text-2xl font-bold">Guide VAE</p>
+                                <p class="text-sm opacity-90 mt-2">PDF à télécharger</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire -->
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Recevez votre guide par email</h3>
+                        <p class="text-gray-600 mb-6">
+                            Ce guide contient les étapes essentielles, les pièges à éviter et mes meilleurs conseils
+                            pour réussir votre VAE.
+                        </p>
+
+                        <form name="guide-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                            <input type="hidden" name="form-name" value="guide-download">
+                            <p class="hidden">
+                                <label>Don't fill this out: <input name="bot-field" /></label>
+                            </p>
+
+                            <div>
+                                <input type="text"
+                                       name="name"
+                                       placeholder="Votre prénom"
+                                       required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+
+                            <div>
+                                <input type="email"
+                                       name="email"
+                                       placeholder="Votre email"
+                                       required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            </div>
+
+                            <button type="submit"
+                                    class="w-full bg-primary text-white py-3 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg">
+                                Télécharger le livret blanc
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Logo et description -->
+                <div>
+                    <img src="logo.png" alt="Ti'colibri Logo" class="h-16 w-auto mb-4 brightness-0 invert">
+                    <p class="text-gray-400 text-sm">
+                        Accompagnement VAE pour les professionnels de la petite enfance.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#accueil" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="#accompagnements" class="hover:text-white transition">Accompagnements</a></li>
+                        <li><a href="#temoignages" class="hover:text-white transition">Témoignages</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Légal -->
+                <div>
+                    <h4 class="font-bold mb-4">Informations légales</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="#" class="hover:text-white transition">CGV</a></li>
+                        <li><a href="#" class="hover:text-white transition">Politique de cookies (UE)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2025 Ti'colibri - Mentions légales | Politique de confidentialité | CGV | Politique de cookies (UE)</p>
+                <p class="mt-2">Liens vers les réseaux / groupes et téléphone, email</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight === '0px' || mobileMenu.style.maxHeight === '') {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            } else {
+                mobileMenu.style.maxHeight = '0px';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0px';
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed header
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const track = document.getElementById('testimonials-track');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            const offset = -currentSlide * 100;
+            track.style.transform = `translateX(${offset}%)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-primary');
+                } else {
+                    dot.classList.remove('bg-primary');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Dots navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-play carousel (optional)
+        // setInterval(nextSlide, 5000);
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+</body>
 </html>
