@@ -1,0 +1,82 @@
+[
+  {
+    "name": "quick-win",
+    "color": "10B981",
+    "description": "Amelioration immediate sans changer de techno"
+  },
+  {
+    "name": "v2",
+    "color": "8B5CF6",
+    "description": "Feature pour la version Next.js"
+  },
+  {
+    "name": "bug",
+    "color": "EF4444",
+    "description": "Quelque chose ne fonctionne pas correctement"
+  },
+  {
+    "name": "enhancement",
+    "color": "06B6D4",
+    "description": "Amelioration ou nouvelle fonctionnalite"
+  },
+  {
+    "name": "performance",
+    "color": "F59E0B",
+    "description": "Optimisation performance"
+  },
+  {
+    "name": "seo",
+    "color": "3B82F6",
+    "description": "Amelioration SEO"
+  },
+  {
+    "name": "accessibility",
+    "color": "EC4899",
+    "description": "Amelioration accessibilite"
+  },
+  {
+    "name": "documentation",
+    "color": "6B7280",
+    "description": "Documentation ou commentaires"
+  },
+  {
+    "name": "p1-critical",
+    "color": "DC2626",
+    "description": "Priorite 1 - Critique/Bloquant"
+  },
+  {
+    "name": "p2-high",
+    "color": "F97316",
+    "description": "Priorite 2 - Important/Haute valeur"
+  },
+  {
+    "name": "p3-medium",
+    "color": "FBBF24",
+    "description": "Priorite 3 - Souhaitable/Moyenne valeur"
+  },
+  {
+    "name": "p4-low",
+    "color": "A3E635",
+    "description": "Priorite 4 - Nice to have/Basse valeur"
+  },
+  {
+    "name": "p5-backlog",
+    "color": "D1D5DB",
+    "description": "Priorite 5 - Future/Backlog"
+  },
+  {
+    "name": "frontend",
+    "color": "8B5CF6",
+    "description": "Frontend/UI"
+  },
+  {
+    "name": "backend",
+    "color": "10B981",
+    "description": "Backend/API/Database"
+  },
+  {
+    "name": "design",
+    "color": "EC4899",
+    "description": "Design/UX/UI"
+  }
+]

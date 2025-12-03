@@ -1,0 +1,13 @@
+# Claude Code documentation (keep local only)
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
